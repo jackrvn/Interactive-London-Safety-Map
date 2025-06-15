@@ -9,6 +9,7 @@ import {
 
 import { ControlPanel } from './components/ControlPanel';
 import { ColorKey } from './components/ColorKey';
+import { DataSource } from './components/DataSource';
 
 import type {Color, MapViewState} from '@deck.gl/core';
 
@@ -156,17 +157,17 @@ export default function App({
 
   return (
     <>
-      <DeckGL 
-        layers={layers} 
-        initialViewState={INITIAL_VIEW_STATE} 
-        controller={true} 
-        getTooltip={getTooltip} 
+      <DeckGL
+        layers={layers}
+        initialViewState={INITIAL_VIEW_STATE}
+        controller={true}
+        getTooltip={getTooltip}
         pickingRadius={5}
       >
         <Map reuseMaps mapStyle={mapStyle} />
       </DeckGL>
       <ColorKey colorRange={colorRange} />
-      <ControlPanel 
+      <ControlPanel
         cellSize={cellSize}
         onCellSizeChange={setCellSize}
         selectedCrimes={new Set(selectedCrimes)}
@@ -182,6 +183,7 @@ export default function App({
         animationSpeed={animationSpeed}
         onSpeedChange={setAnimationSpeed}
       />
+      <DataSource />
     </>
   );
 }

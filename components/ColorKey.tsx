@@ -7,44 +7,22 @@ type ColorKeyProps = {
 };
 
 export const ColorKey: React.FC<ColorKeyProps> = ({ colorRange, style }) => {
+  const gradientStyle = {
+    background: `linear-gradient(to right, ${colorRange
+      .map(
+        (color) =>
+          `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${color[3] / 255})`
+      )
+      .join(", ")})`
+  };
+
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: "24px",
-        left: "24px",
-        background: "rgba(0, 0, 0, 0.8)",
-        padding: "12px",
-        borderRadius: "4px",
-        color: "white",
-        ...style,
-      }}
-    >
-      <div style={{ marginBottom: "8px", fontSize: "12px" }}>Crime Density</div>
-      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
-            fontSize: "10px",
-          }}
-        >
+    <div className="color-key" style={style}>
+      <div className="color-key__title">Crime Density</div>
+      <div className="color-key__container">
+        <div className="color-key__scale">
           <span>Low</span>
-          <div
-            style={{
-              width: "50px",
-              height: "12px",
-              background: `linear-gradient(to right, ${colorRange
-                .map(
-                  (color) =>
-                    `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${
-                      color[3] / 255
-                    })`
-                )
-                .join(", ")})`,
-            }}
-          />
+          <div className="color-key__gradient" style={gradientStyle} />
           <span>High</span>
         </div>
       </div>
