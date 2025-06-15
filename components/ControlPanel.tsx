@@ -33,8 +33,8 @@ export function ControlPanel({
   animationSpeed,
   onSpeedChange
 }: ControlPanelProps) {
-  const [isExpanded, setIsExpanded] = useState(true);
-  const [isPanelVisible, setIsPanelVisible] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isPanelVisible, setIsPanelVisible] = useState(false);
 
   const formatMonth = (monthStr: string) => {
     const [year, month] = monthStr.replace('.json', '').split('-');
@@ -93,7 +93,7 @@ export function ControlPanel({
           <input
             type="number"
             min="1"
-            max="5"
+            max="6"
             value={animationSpeed}
             onChange={(e) => onSpeedChange(Number(e.target.value))}
             className="speed-control__input"

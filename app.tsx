@@ -8,6 +8,7 @@ import {
 } from "@deck.gl/aggregation-layers";
 
 import { ControlPanel } from './components/ControlPanel';
+import { ColorKey } from './components/ColorKey';
 
 import type {Color, MapViewState} from '@deck.gl/core';
 
@@ -85,7 +86,7 @@ export default function App({
   const [loadedData, setLoadedData] = useState<DataPoint[]>([]);
   const [selectedMonth, setSelectedMonth] = useState(LATEST_MONTH);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [animationSpeed, setAnimationSpeed] = useState(1);
+  const [animationSpeed, setAnimationSpeed] = useState(3);
 
   const currentMonthIndex = AVAILABLE_MONTHS.indexOf(selectedMonth);
 
@@ -164,6 +165,7 @@ export default function App({
       >
         <Map reuseMaps mapStyle={mapStyle} />
       </DeckGL>
+      <ColorKey colorRange={colorRange} />
       <ControlPanel 
         cellSize={cellSize}
         onCellSizeChange={setCellSize}
