@@ -15,6 +15,9 @@ type ControlPanelProps = {
   onPlayPauseToggle: () => void;
   animationSpeed: number;
   onSpeedChange: (speed: number) => void;
+  isVisible: boolean;
+  onClose: () => void;
+  onOpen: () => void;
 };
 
 export function ControlPanel({
@@ -31,7 +34,10 @@ export function ControlPanel({
   isPlaying,
   onPlayPauseToggle,
   animationSpeed,
-  onSpeedChange
+  onSpeedChange,
+  isVisible,
+  onClose,
+  onOpen
 }: ControlPanelProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPanelVisible, setIsPanelVisible] = useState(false);
@@ -44,11 +50,11 @@ export function ControlPanel({
 
   const monthIndex = availableMonths.indexOf(selectedMonth);
 
-  if (!isPanelVisible) {
+  if (!isVisible) {
     return (
-      <button
-        onClick={() => setIsPanelVisible(true)}
+      <button 
         className="control-panel__show-button"
+        onClick={onOpen}
       >
         Show Controls
       </button>
@@ -59,7 +65,7 @@ export function ControlPanel({
     <div className="control-panel">
       <div className="control-panel__header">
         <button
-          onClick={() => setIsPanelVisible(false)}
+          onClick={onClose}
           className="control-panel__hide-button"
         >
           Hide Panel

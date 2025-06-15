@@ -10,6 +10,7 @@ import {
 import { ControlPanel } from './components/ControlPanel';
 import { ColorKey } from './components/ColorKey';
 import { DataSource } from './components/DataSource';
+import { Backdrop } from './components/Backdrop';
 
 import type {Color, MapViewState} from '@deck.gl/core';
 
@@ -88,6 +89,7 @@ export default function App({
   const [selectedMonth, setSelectedMonth] = useState(LATEST_MONTH);
   const [isPlaying, setIsPlaying] = useState(false);
   const [animationSpeed, setAnimationSpeed] = useState(3);
+  const [isPanelVisible, setIsPanelVisible] = useState(true);
 
   const currentMonthIndex = AVAILABLE_MONTHS.indexOf(selectedMonth);
 
@@ -167,6 +169,10 @@ export default function App({
         <Map reuseMaps mapStyle={mapStyle} />
       </DeckGL>
       <ColorKey colorRange={colorRange} />
+      <Backdrop 
+        isVisible={isPanelVisible} 
+        onClick={() => setIsPanelVisible(false)} 
+      />
       <ControlPanel
         cellSize={cellSize}
         onCellSizeChange={setCellSize}
@@ -182,6 +188,9 @@ export default function App({
         onPlayPauseToggle={handlePlayPauseToggle}
         animationSpeed={animationSpeed}
         onSpeedChange={setAnimationSpeed}
+        isVisible={isPanelVisible}
+        onClose={() => setIsPanelVisible(false)}
+        onOpen={() => setIsPanelVisible(true)}
       />
       <DataSource />
     </>
