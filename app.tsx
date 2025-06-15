@@ -90,7 +90,7 @@ export default function App({
   const currentMonthIndex = AVAILABLE_MONTHS.indexOf(selectedMonth);
 
   useEffect(() => {
-    fetch(`data/${selectedMonth}`)
+    fetch(`/data/${selectedMonth}`)
       .then(response => response.json())
       .then(json => setLoadedData(json));
   }, [selectedMonth]);
