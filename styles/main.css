@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.data-source {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(32, 32, 32, 0.9);
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    z-index: 1;
+}
+
+.data-source a {
+    color: #4a9eff;
+    text-decoration: none;
+}
+
+.data-source a:hover {
+    text-decoration: underline;
+}
+
+.control-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(32, 32, 32, 0.9);
+    padding: 12px;
+    border-radius: 4px;
+    color: white;
+    z-index: 1;
+    width: 300px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.control-panel__show-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    background: rgba(32, 32, 32, 0.9);
+    border: 1px solid #666;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.control-panel__header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+}
+
+.control-panel__hide-button {
+    padding: 4px 8px;
+    background: #444;
+    border: 1px solid #666;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.control-panel__section {
+    margin-bottom: 16px;
+}
+
+.time-control__header {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.time-control__slider-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.time-control__slider {
+    flex: 1;
+    background: #444;
+}
+
+.time-control__button {
+    padding: 4px 8px;
+    background: #444;
+    border: 1px solid #666;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    width: 80px;
+}
+
+.speed-control {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.speed-control__label {
+    font-size: 0.9em;
+    flex: 1;
+}
+
+.speed-control__input {
+    width: 60px;
+    padding: 4px;
+    background: #444;
+    border: 1px solid #666;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+}
+
+.speed-control__unit {
+    font-size: 0.8em;
+    min-width: 20px;
+}
+
+.crime-types__header {
+    margin-bottom: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.crime-types__button {
+    margin-right: 8px;
+    padding: 4px 8px;
+    background: #444;
+    border: 1px solid #666;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.crime-types__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.crime-types__item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.crime-types__checkbox {
+    margin-right: 8px;
+}
+
+.cell-size__control {
+    margin-bottom: 8px;
+}
+
+.cell-size__slider {
+    width: 100%;
+    margin-top: 8px;
+}

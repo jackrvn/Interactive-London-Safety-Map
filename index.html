@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>London Safety Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://unpkg.com/maplibre-gl@3.6.0/dist/maplibre-gl.css' rel='stylesheet' />
+  <link href='styles/main.css' rel='stylesheet' />
+</head>
+<body>
+<div id="app"></div>
+<div class="data-source">
+  Data source: <a href="https://data.police.uk" target="_blank" rel="noopener noreferrer">UK Police Data</a> (Met/City of London only)
+</div>
+</body>
+<script type="module">
+  import {renderToDOM} from './app.tsx';
+  renderToDOM(document.getElementById('app'));
+</script>
+</html>
